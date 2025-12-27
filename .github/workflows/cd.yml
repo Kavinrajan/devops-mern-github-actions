@@ -17,6 +17,5 @@ jobs:
           script: |
             cd devops-mern-github-actions/
             git pull origin main
-            docker buildx install
             docker-compose down
             docker-compose up --build -d
