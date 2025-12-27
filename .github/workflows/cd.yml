@@ -8,7 +8,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy SSH commands using password
+      - name: Deploy SSH commands
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.EC2_HOST }}
