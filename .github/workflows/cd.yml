@@ -8,7 +8,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy SSH commands
+      - name: Deploy via SSH commands
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -17,5 +17,6 @@ jobs:
           script: |
             cd devops-mern-github-actions/
             git pull origin main
+            docker buildx install
             docker-compose down
             docker-compose up --build -d
